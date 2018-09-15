@@ -1,0 +1,12 @@
+For expect in jest
+https://jestjs.io/docs/en/expect
+
+For Manual Configuration in jest if you are not using the create-react-app
+https://jestjs.io/docs/en/webpack#handling-static-assets
+
+For enzyme lib 
+https://github.com/airbnb/enzyme
+
+For Documentation for enzyme
+https://airbnb.io/enzyme/docs/api/
+
