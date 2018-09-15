@@ -32,29 +32,31 @@ const setup = (props = {}, state = {}) => {
  * @return {shallowWrapper}
  */
 const findByTestAttr = (wrapper, val) => {
-  return wrapper.find(`[data-test]=${val}`);
+  return wrapper.find(`[data-test="${val}"]`);
 }
 
 test('render without error', () => {
   const wrapper = setup();
-  const appComponent = wrapper.find("[data-test='component-app']");
+  const appComponent = findByTestAttr(wrapper, 'component-app');
   expect(appComponent.length).toBe(1);
 });
 
 test('renders increment button', () => {
   const wrapper = setup();
-  const appComponent = wrapper.find("[data-test='increment-button']");
-  expect(appComponent.length).toBe(1);
+  const button = findByTestAttr(wrapper, 'increment-button');
+  expect(button.length).toBe(1);
 });
 
+//old way writting, before using the function findByTestAttr..
 test('counter starts at 0', () => {
   const wrapper = setup();
-  const appComponent = wrapper.find("[data-test='starts-zero']");
-  expect(appComponent.length).toBe(1);
+  const counter = wrapper.find("[data-test='counter-start']");
+  expect(counter.length).toBe(1);
 });
 
+//old way writting, before using the function findByTestAttr..
 test('clicking button increments counter display', () => {
   const wrapper = setup();
-  const appComponent = wrapper.find("[data-test='counter-display']");
-  expect(appComponent.length).toBe(1);
+  const couterStart = wrapper.find("[data-test='counter-increment']");
+  expect(couterStart.length).toBe(1);
 })
